@@ -1,0 +1,17 @@
+
+    <div class="card-header">
+        <h3 class="card-title">{{title}}</h3>
+    </div>
+    <div class="card-body p-4">
+        <div class="col-6">
+            <div class="form-group" *ngFor="let item of meta">
+                <label>{{item.label}}</label>
+                <input *ngIf="item.inputType == 'text' " [type]="item.inputType"
+                    [(ngModel)]="mappingModel[item.mappingColumn]" class="form-control">
+                <ng-multiselect-dropdown *ngIf="item.inputType == 'multi' " [settings]="dropdownSettings"
+                    [data]="item.data" [(ngModel)]="mappingModel[item.mappingColumn]">
+                </ng-multiselect-dropdown>
+
+            </div>
+        </div>
+    </div>

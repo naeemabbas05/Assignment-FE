@@ -1,0 +1,12 @@
+<div class="row mb-3">
+    <div class="col mb-2 mt-2">
+      <app-button (click)="addUser()" name="Add User" classes="btn btn-primary float-end"></app-button>
+    </div>
+    <div class="col-12">
+      <app-table [schema]="schema" [data]="data" [actionTemplate]="action" [totalCount]="totalCount" [pageNo]="pageNo" [pageSize]="pageSize" (pageChangeEvent)="pageChange($event)"></app-table>
+      <ng-template #action let-row='row'>
+        <app-button name="Edit" (click)="handleEdit(row)"  ></app-button> |
+        <app-button name="Delete" (click)="handleRemove(row)"></app-button>
+      </ng-template>
+    </div>
+  </div>

@@ -1,0 +1,7 @@
+
+<div class="card mt-2">
+    <app-form-builder [title]="userId ? 'Edit User': 'Add User'" [meta]="userMeta" [mappingModel]="userModel"></app-form-builder>
+    <div class="col mb-2 mt-2">
+        <app-button (click)="submit()" name="Submit" classes="btn btn-primary float-end mx-2"></app-button>
+    </div>
+</div>
